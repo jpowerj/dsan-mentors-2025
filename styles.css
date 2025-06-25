@@ -4,8 +4,8 @@
     src: url("assets/futura-pt.otf") format("opentype");
 }
 
-input[type=checkbox] {
-    transform: scale(1.4);
+.bs-checkbox input[type=checkbox] {
+    transform: scale(1.6);
 }
 
 * {

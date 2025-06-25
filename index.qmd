@@ -1,5 +1,5 @@
 ---
-title: "<span class='quarto-title-span px-5 py-2' style='display: inline-block'>DSAN Mentorship Program</span>"
+title: "<span class='quarto-title-span px-5 py-2' style='display: inline-block'>DSAN Mentorship Program 2025</span>"
 include-in-header: "mentor-header.html"
 anchor-sections: false
 page-layout: article
