@@ -1,17 +1,9 @@
 window.document.addEventListener("DOMContentLoaded", function (event) {
   store.defaults({ selected: [] });
   // console.log(store.get('selected'));
-  var sHeadHtml = "<span class='sidebar-subtitle'>Your Selections:</span>";
+  var sHeadHtml = "<span class='sidebar-subtitle'>Selected IDs:</span>";
   var selectionsHtml = "<span class='sidebar-subtitle' id='selected-ids' data-bs-toggle='tooltip' data-bs-placement='top' title='Click to copy'></span>";
-  var clearHtml = "<button type='button' class='btn btn-outline-dark btn-sm py-0 px-1'>Clear</button>"
-  async function copyTextToClipboard(text) {
-    try {
-      await navigator.clipboard.writeText(text);
-      console.log('Text copied to clipboard successfully!');
-    } catch (err) {
-      console.error('Failed to copy text: ', err);
-    }
-  }
+  var clearHtml = "<button type='button' class='btn btn-outline-dark btn-sm py-0 px-1' id='clear-selection'>Clear</button>"
   
   var subtitleDiv = $(`<br>${sHeadHtml}<br>${selectionsHtml}<br><br>${clearHtml}`);
   $('.sidebar-title').append(subtitleDiv);
@@ -26,5 +18,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     } catch (err) {
       console.error("Failed to copy:", err);
     }
+  });
+  document.getElementById("clear-selection").addEventListener("click", async function () {
+    document.getElementById('selected-ids').innerHTML = '';
+    $('#mentor-table').bootstrapTable('uncheckAll');
+    store.clearAll();
   });
 });
