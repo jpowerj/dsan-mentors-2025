@@ -416,12 +416,13 @@ ul.task-list li input[type="checkbox"] {
   </div><!-- end accordion -->
 </div></div><script>
 function detailFormatter(index, row) {
-    var excludeFields = ['timetamp', 'mentor_id', 'status', 'major', 'internship_experience', 'internship_details'];
+    var excludeFields = ['timetamp', 'mentor_id', 'status', 'major', 'internship_experience', 'internship_details', 'selected'];
     var html = [];
     $.each(row, function (key, value) {
         // Exclude fields already in the main view
+        console.log("Parsing key: " + key);
         var inExclude = excludeFields.includes(key);
-        var hasValue = value != ""
+        var hasValue = (value != ""); // && (typeof value !== 'undefined');
         var keyMap = {
           'description': "Bio:",
           'why': "What are your goals as a mentor?",
@@ -596,8 +597,10 @@ $("[id^=hobby-]").click(function() {
 // Parse the .csv spreadsheet
 //"https://docs.google.com/spreadsheets/d/e/2PACX-1vQBF5uM7cMSFq_TkxVW0rxYZiU3vw16-IZBz1PfwMK1gDYUucXa2mtu7NEHivuUOn0yuUCELbcijlRR/pub?gid=0&single=true&output=csv"
 // "https://docs.google.com/spreadsheets/d/e/2PACX-1vRL9qJuSSOARoZuW9oljx9iS6DaCaJzDT5ZH7ktIWil0uz0AMh5SkzXzsIxpMf61DH3Ya17Nt8erWqN/pub?gid=721661001&single=true&output=csv"
-Papa.parse("https://docs.google.com/spreadsheets/d/e/2PACX-1vRAJ5LNGz2etwolKHAfpTbNz2IB_CzaVj2kkate728uOuLyDxneNYE1n_9xjUmxmcPOY_py-CSX7hZX/pub?gid=1040254459&single=true&output=csv", {
-  download: true,
+// "https://docs.google.com/spreadsheets/d/e/2PACX-1vRAJ5LNGz2etwolKHAfpTbNz2IB_CzaVj2kkate728uOuLyDxneNYE1n_9xjUmxmcPOY_py-CSX7hZX/pub?gid=1040254459&single=true&output=csv"
+$.get("data/2025_mentors_anonymized.csv", function (data) {
+  Papa.parse(data, {
+  // download: true,
   header: true,
   complete: function (results) {
     console.log("Parsing complete:", results);
@@ -610,6 +613,8 @@ Papa.parse("https://docs.google.com/spreadsheets/d/e/2PACX-1vRAJ5LNGz2etwolKHAfp
     $table.bootstrapTable('expandAllRows');
   }
 });
+});
+
 var strengthDict = {
   "I am familiar with life in DC": "fa-solid fa-champagne-glasses",
   "I am friendly and welcoming": "fa-solid fa-face-smile",
