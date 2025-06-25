@@ -18,7 +18,7 @@ Welcome to the 2025 DSAN Mentorship Program at Georgetown University! Browse ava
 ```{=html}
   <table
     id="mentor-table"
-    data-unique-id="id"
+    data-unique-id="mentor_id"
     data-detail-view="true" data-detail-view-by-click="true"
     data-detail-formatter="detailFormatter"
     data-checkbox-header="false"
@@ -280,7 +280,7 @@ function detailFormatter(index, row) {
     var html = [];
     $.each(row, function (key, value) {
         // Exclude fields already in the main view
-        console.log("Parsing key: " + key);
+        // console.log("Parsing key: " + key);
         var inExclude = excludeFields.includes(key);
         var hasValue = (value != ""); // && (typeof value !== 'undefined');
         var keyMap = {
@@ -324,6 +324,12 @@ $('#mentor-table').on('check.bs.table', function (e, r, elt) {
     // Convert to string
     store.set('selected', selected);
   }
+  // Add 'selected' class to next detailView
+  // console.log(elt);
+  // let nextElt = elt[0].parentElement.parentElement.parentElement.nextElementSibling;
+  // if (nextElt.classList.contains("detail-view")) {
+  //   nextElt.classList.add("selected");
+  // }
   // And update the sidebar
   updateSidebar();
 });
@@ -342,6 +348,11 @@ $('#mentor-table').on('uncheck.bs.table', function (e, r, elt) {
     // Convert to string
     store.set('selected', selected);
   }
+  // Remove 'selected' class to next detailView
+  // let nextElt = elt[0].parentElement.parentElement.parentElement.nextSibling;
+  // if (nextElt.classList.contains("detail-view")) {
+  //   nextElt.classList.remove("selected");
+  // }
   // And update the sidebar
   updateSidebar();
 });

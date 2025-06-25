@@ -112,6 +112,9 @@ html, body {
     border: 2px solid white !important;
 }
 
+.selected td {
+    background-color: rgba(136,231,136,0.5) !important;
+}
 
 .subtitle {
     display: inline-block !important;
