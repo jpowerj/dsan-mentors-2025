@@ -3,11 +3,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   // console.log(store.get('selected'));
   var sHeadHtml = "<span class='sidebar-subtitle'>Selected IDs:</span>";
   var selectionsHtml = "<span class='sidebar-subtitle' id='selected-ids'></span>";
-  var copyHtml = "<button type='button' class='btn btn-outline-dark btn-sm py-0 px-1 float-start' id='copy-selection' data-bs-toggle='tooltip' data-bs-placement='top' title='Click to copy'>Copy</button>"
   var clearHtml = "<button type='button' class='btn btn-outline-dark btn-sm py-0 px-1 float-end' id='clear-selection'>Clear</button>"
   
   var subtitleDiv = $(`<br>${sHeadHtml}<br>${selectionsHtml}<br><br>${copyHtml}${clearHtml}`);
   $('.sidebar-title').append(subtitleDiv);
+
   document.getElementById("copy-selection").addEventListener("click", async function () {
     const text = $('#selected-ids').text();
     try {

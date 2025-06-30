@@ -11,7 +11,7 @@ website:
   favicon: "favicon.png"
   sidebar:
     id: mainnav
-    style: "floating"
+    style: floating
     title: "Georgetown DSAN Mentorship Program"
     search: false
     contents:
@@ -24,10 +24,8 @@ format:
     css:
       - styles.css
     grid:
-      sidebar-width: 150px
+      sidebar-width: 180px
       body-width: 1200px
-      margin-width: 380px
+      margin-width: 360px
       gutter-width: 1.5rem
-
-
 

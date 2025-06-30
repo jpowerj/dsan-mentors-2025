@@ -59,6 +59,10 @@ html, body {
     border: 1px solid gray !important;
 }
 
+.handle:hover {
+    cursor: ns-resize;
+}
+
 #mentor-table td {
     font-size: 12pt !important;
 }
@@ -137,7 +141,7 @@ html, body {
     height: auto !important;
 }
 .sidebar-icon {
-    font-size: 85% !important;
+    font-size: 80% !important;
 }
 .sidebar-subtitle {
     font-size: 12pt !important;
@@ -145,7 +149,7 @@ html, body {
 }
 
 .smaller-text {
-    font-size: 85% !important;
+    font-size: 80% !important;
 }
 
 .top-banner:before {

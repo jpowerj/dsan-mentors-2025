@@ -10,12 +10,10 @@ sidebar: mainnav
 
 ```{=html}
 <a name="top-of-page"></a>
-<div class="column-body">
-```
-
-Welcome to the 2025 DSAN Mentorship Program at Georgetown University! Browse available mentors in the list below, (optionally) using the filters on the right to narrow the list, then indicate the **ID** values for your top 10 preferences in the mentorship preferences form.
-
-```{=html}
+<div class="column-body" id="table-column">
+  <p>
+  Welcome to the 2025 DSAN Mentorship Program at Georgetown University! Browse available mentors in the list below, (optionally) using the filters on the right to narrow the list, then indicate the <b>ID</b> values for your top 10 preferences in the mentorship preferences form.
+  </p>
   <table
     id="mentor-table"
     data-unique-id="mentor_id"
@@ -25,468 +23,252 @@ Welcome to the 2025 DSAN Mentorship Program at Georgetown University! Browse ava
     data-sticky-header="true"
     data-sticky-header-offset-y="-10"
   >
-     <thead>
-          <tr>
-               <th data-field="mentor_id" data-width="80">ID</th>
-               <th data-field="status">Status</th>
-               <th data-field="major">Major</th>
-               <th data-field="strengths" data-formatter="strengthsFormatter">Strengths</th>
-               <th data-field="hobbies" data-formatter="hobbiesFormatter">Hobbies</th>
-               <th data-field="selected"
-               data-checkbox="true"></th>
-          </tr>
-     </thead>
+    <thead>
+      <tr>
+        <th data-field="mentor_id" data-width="80">ID</th>
+        <th data-field="status">Status</th>
+        <th data-field="major">Major</th>
+        <th data-field="strengths" data-formatter="strengthsFormatter">Strengths</th>
+        <th data-field="hobbies" data-formatter="hobbiesFormatter">Hobbies</th>
+        <th data-field="selected"
+        data-checkbox="true"></th>
+      </tr>
+    </thead>
   </table>
 </div> <!-- end column-body -->
 
-<div class="column-margin floating overflow-auto" style="top: 0px">
-  <div class="accordion sticky-top" id="accordionFilters">
+<!-- class="column-margin floating overflow-auto" -->
+
+<div
+  class="column-margin floating overflow-auto"
+  style="top: 0px"
+>
+  <div
+    class="accordion sticky-top" 
+    id="accordionFilters"
+  >
     <div class="accordion-item">
       <div class="accordion-header">
-        <button class="accordion-button p-2 bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#strengthsCollapse" aria-expanded="true" aria-controls="strengthsCollapse">
+        <button
+          class="accordion-button p-2 bg-light" 
+          type="button"
+          data-bs-toggle="collapse" 
+          data-bs-target="#strengthsCollapse" 
+          aria-expanded="true" 
+          aria-controls="strengthsCollapse"
+        >
           Filter Rows
         </button>
       </div> <!-- end accordion-header -->
-      <div id="strengthsCollapse" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+      <div
+        id="strengthsCollapse"
+        class="accordion-collapse collapse show"
+        data-bs-parent="#accordionFilters"
+      >
         <div class="accordion-body">
-          <!-- start strengths content -->
-          <form>
-          <div class="container mb-2">
-            <div class="row">
-              <div class="btn-group col-12 px-1" role="group" aria-label="Basic radio toggle button group">
-                <input type="radio" class="btn-check" name="all-props" id="all-props" autocomplete="off" checked>
-                <label class="btn btn-outline-dark btn-sm p-0 col-6" for="all-props">Show All</label>
-                <input type="radio" class="btn-check" name="filter-props" id="filter-props" autocomplete="off">
-                <label class="btn btn-outline-dark btn-sm p-0 col-6" for="filter-props">Filter:</label>
-              </div><!-- end button group -->
-            </div><!-- end row -->
-          </div><!-- end button container -->
-          <p class="h5 mb-1">Strengths:</p>
-      
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="checkbox" id="strength-familiar-checkbox" value="I am familiar with life in DC" checked disabled>
-    <label class="form-check-label" for="strength-familiar-checkbox">
-      <i class="bi bi-buildings-fill pe-1"></i>Familiar with life in DC
-    </label>
-</div>
+          <form id="accordionForm">
+            <div class="container mb-2">
+              <div class="row">
+                <div class="btn-group col-12 px-1" role="group" aria-label="Basic radio toggle button group">
+                  <input type="radio" class="btn-check" name="all-props" id="all-props" autocomplete="off" checked>
+                  <label class="btn btn-outline-dark btn-sm p-0 col-6" for="all-props">Show All</label>
+                  <input type="radio" class="btn-check" name="filter-props" id="filter-props" autocomplete="off">
+                  <label class="btn btn-outline-dark btn-sm p-0 col-6" for="filter-props">Filter:</label>
+                </div><!-- end button group -->
+              </div><!-- end row -->
+            </div><!-- end button container -->
+            <!-- start strengths content -->
+            <p class="h5 mb-1">Strengths:</p>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="strength-familiar-checkbox" value="I am familiar with life in DC" checked disabled>
+                <label class="form-check-label" for="strength-familiar-checkbox">
+                  <i class="bi bi-buildings-fill pe-1"></i>Familiar with life in DC
+                </label>
+            </div>
 
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="checkbox" id="strength-friendly-checkbox" value="I am friendly and welcoming" checked disabled>
-    <label class="form-check-label" for="strength-friendly-checkbox">
-      <i class="bi bi-emoji-smile-fill pe-1"></i>Friendly and welcoming
-    </label>
-</div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="strength-friendly-checkbox" value="I am friendly and welcoming" checked disabled>
+                <label class="form-check-label" for="strength-friendly-checkbox">
+                  <i class="bi bi-emoji-smile-fill pe-1"></i>Friendly and welcoming
+                </label>
+            </div>
 
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="checkbox" id="strength-academic-checkbox" value="I am strong academically" checked disabled>
-    <label class="form-check-label" for="strength-academic-checkbox">
-      <i class="bi bi-award-fill pe-1"></i>Strong academically
-    </label>
-</div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="strength-academic-checkbox" value="I am strong academically" checked disabled>
+                <label class="form-check-label" for="strength-academic-checkbox">
+                  <i class="bi bi-award-fill pe-1"></i>Strong academically
+                </label>
+            </div>
 
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="checkbox" id="strength-organizing-checkbox" value="I enjoy organizing social activities" checked disabled>
-    <label class="form-check-label" for="strength-organizing-checkbox">
-      <i class="bi bi-people-fill pe-1"></i>I enjoy organizing social activities
-    </label>
-</div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="strength-organizing-checkbox" value="I enjoy organizing social activities" checked disabled>
+                <label class="form-check-label" for="strength-organizing-checkbox">
+                  <i class="bi bi-people-fill pe-1"></i>I enjoy organizing social activities
+                </label>
+            </div>
 
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="checkbox" id="strength-experience-checkbox" value="I have work and/or internship experience" checked disabled>
-    <label class="form-check-label" for="strength-experience-checkbox">
-      <i class="bi bi-suitcase-lg-fill pe-1"></i>Work/internship experience
-    </label>
-</div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="strength-experience-checkbox" value="I have work and/or internship experience" checked disabled>
+                <label class="form-check-label" for="strength-experience-checkbox">
+                  <i class="bi bi-suitcase-lg-fill pe-1"></i>Work/internship experience
+                </label>
+            </div>
 
-<p class="h5 mb-1">Hobbies:</p>
+            <p class="h5 mb-1">Hobbies:</p>
 
-<div class="form-check form-check-inline">
-<input class="form-check-input" type="checkbox" id="hobby-art-checkbox" value="Art / Art History" checked disabled>
-    <label class="form-check-label" for="hobby-art-checkbox">
-      <i class="fa-solid fa-paintbrush" title="Art / Art History"></i>&nbsp;Art / Art History
-    </label>
-</div>
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="hobby-art-checkbox" value="Art / Art History" checked disabled>
+                <label class="form-check-label" for="hobby-art-checkbox">
+                  <i class="fa-solid fa-paintbrush" title="Art / Art History"></i>&nbsp;Art / Art History
+                </label>
+            </div>
 
-<!-- <div class="form-check form-check-inline">
-<input class="form-check-input" type="checkbox" id="hobby-bars-checkbox" value="Bars & Clubs" checked disabled>
-    <label class="form-check-label" for="hobby-bars-checkbox">
-      <i class="fa-solid fa-martini-glass" title="Bars & Clubs"></i>&nbsp;Bars & Clubs
-    </label>
-</div> -->
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="hobby-cooking-checkbox" value="Cooking" checked disabled>
+                <label class="form-check-label" for="hobby-cooking-checkbox">
+                  <i class="fa-solid fa-kitchen-set" title="Cooking"></i>&nbsp;Cooking
+                </label>
+            </div>
 
-<!-- <div class="form-check form-check-inline">
-<input class="form-check-input" type="checkbox" id="hobby-boardgames-checkbox" value="Board / Card Games" checked disabled>
-    <label class="form-check-label" for="hobby-boardgames-checkbox">
-      <i class="fa-solid fa-game-board" title="Board / Card Games"></i>&nbsp;Board / Card Games
-    </label>
-</div> -->
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="hobby-cycling-checkbox" value="Cycling" checked disabled>
+                <label class="form-check-label" for="hobby-cycling-checkbox">
+                  <i class="fa-solid fa-person-biking" title="Cycling"></i>&nbsp;Cycling
+                </label>
+            </div>
 
-<div class="form-check form-check-inline">
-<input class="form-check-input" type="checkbox" id="hobby-cooking-checkbox" value="Cooking" checked disabled>
-    <label class="form-check-label" for="hobby-cooking-checkbox">
-      <i class="fa-solid fa-kitchen-set" title="Cooking"></i>&nbsp;Cooking
-    </label>
-</div>
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="hobby-film-checkbox" value="Film Enthusiast" checked disabled>
+                <label class="form-check-label" for="hobby-film-checkbox">
+                  <i class="fa-solid fa-film" title="Film Enthusiast"></i>&nbsp;Film Enthusiast
+                </label>
+            </div>
 
-<!-- <div class="form-check form-check-inline">
-<input class="form-check-input" type="checkbox" id="hobby-crafts-checkbox" value="Creative Projects" checked disabled>
-    <label class="form-check-label" for="hobby-crafts-checkbox">
-      <i class="fa-solid fa-pen-ruler" title="Creative Projects"></i>&nbsp;Creative Projects
-    </label>
-</div> -->
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="hobby-fitness-checkbox" value="Fitness" checked disabled>
+                <label class="form-check-label" for="hobby-fitness-checkbox">
+                  <i class="fa-solid fa-heart-pulse" title="Fitness"></i>&nbsp;Fitness
+                </label>
+            </div>
 
-<div class="form-check form-check-inline">
-<input class="form-check-input" type="checkbox" id="hobby-cycling-checkbox" value="Cycling" checked disabled>
-    <label class="form-check-label" for="hobby-cycling-checkbox">
-      <i class="fa-solid fa-person-biking" title="Cycling"></i>&nbsp;Cycling
-    </label>
-</div>
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="hobby-food-checkbox" value="Foodie / Restaurants" checked disabled>
+                <label class="form-check-label" for="hobby-food-checkbox">
+                  <i class="fa-solid fa-pizza-slice" title="Foodie / Restaurants"></i>&nbsp;Foodie / Restaurants
+                </label>
+            </div>
 
-<!-- <div class="form-check form-check-inline">
-<input class="form-check-input" type="checkbox" id="hobby-dancing-checkbox" value="Dancing" checked disabled>
-    <label class="form-check-label" for="hobby-dancing-checkbox">
-      <i class="fa-solid fa-party-horn" title="Dancing"></i>&nbsp;Dancing
-    </label>
-</div> -->
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="hobby-hiking-checkbox" value="Hiking" checked disabled>
+                <label class="form-check-label" for="hobby-hiking-checkbox">
+                  <i class="fa-solid fa-person-hiking" title="Hiking"></i>&nbsp;Hiking
+                </label>
+            </div>
 
-<div class="form-check form-check-inline">
-<input class="form-check-input" type="checkbox" id="hobby-film-checkbox" value="Film Enthusiast" checked disabled>
-    <label class="form-check-label" for="hobby-film-checkbox">
-      <i class="fa-solid fa-film" title="Film Enthusiast"></i>&nbsp;Film Enthusiast
-    </label>
-</div>
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="hobby-lang-checkbox" value="Languages" checked disabled>
+                <label class="form-check-label" for="hobby-lang-checkbox">
+                  <i class="fa-solid fa-language" title="Languages"></i>&nbsp;Languages
+                </label>
+            </div>
 
-<div class="form-check form-check-inline">
-<input class="form-check-input" type="checkbox" id="hobby-fitness-checkbox" value="Fitness" checked disabled>
-    <label class="form-check-label" for="hobby-fitness-checkbox">
-      <i class="fa-solid fa-heart-pulse" title="Fitness"></i>&nbsp;Fitness
-    </label>
-</div>
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="hobby-museums-checkbox" value="Museums" checked disabled>
+                <label class="form-check-label" for="hobby-museums-checkbox">
+                  <i class="fa-solid fa-palette" title="Museums"></i>&nbsp;Museums
+                </label>
+            </div>
 
-<div class="form-check form-check-inline">
-<input class="form-check-input" type="checkbox" id="hobby-food-checkbox" value="Foodie / Restaurants" checked disabled>
-    <label class="form-check-label" for="hobby-food-checkbox">
-      <i class="fa-solid fa-pizza-slice" title="Foodie / Restaurants"></i>&nbsp;Foodie / Restaurants
-    </label>
-</div>
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="hobby-music-checkbox" value="Music" checked disabled>
+                <label class="form-check-label" for="hobby-music-checkbox">
+                  <i class="fa-solid fa-music" title="Music"></i>&nbsp;Music
+                </label>
+            </div>
 
-<div class="form-check form-check-inline">
-<input class="form-check-input" type="checkbox" id="hobby-hiking-checkbox" value="Hiking" checked disabled>
-    <label class="form-check-label" for="hobby-hiking-checkbox">
-      <i class="fa-solid fa-person-hiking" title="Hiking"></i>&nbsp;Hiking
-    </label>
-</div>
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="hobby-photog-checkbox" value="Photography" checked disabled>
+                <label class="form-check-label" for="hobby-photog-checkbox">
+                  <i class="fa-solid fa-camera" title="Photography"></i>&nbsp;Photography
+                </label>
+            </div>
 
-<div class="form-check form-check-inline">
-<input class="form-check-input" type="checkbox" id="hobby-lang-checkbox" value="Languages" checked disabled>
-    <label class="form-check-label" for="hobby-lang-checkbox">
-      <i class="fa-solid fa-language" title="Languages"></i>&nbsp;Languages
-    </label>
-</div>
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="hobby-reading-checkbox" value="Reading" checked disabled>
+                <label class="form-check-label" for="hobby-reading-checkbox">
+                  <i class="fa-solid fa-book-open-reader" title="Reading"></i>&nbsp;Reading
+                </label>
+            </div>
 
-<div class="form-check form-check-inline">
-<input class="form-check-input" type="checkbox" id="hobby-museums-checkbox" value="Museums" checked disabled>
-    <label class="form-check-label" for="hobby-museums-checkbox">
-      <i class="fa-solid fa-palette" title="Museums"></i>&nbsp;Museums
-    </label>
-</div>
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="hobby-running-checkbox" value="Running" checked disabled>
+                <label class="form-check-label" for="hobby-running-checkbox">
+                  <i class="fa-solid fa-person-running" title="Running"></i>&nbsp;Running
+                </label>
+            </div>
 
-<div class="form-check form-check-inline">
-<input class="form-check-input" type="checkbox" id="hobby-music-checkbox" value="Music" checked disabled>
-    <label class="form-check-label" for="hobby-music-checkbox">
-      <i class="fa-solid fa-music" title="Music"></i>&nbsp;Music
-    </label>
-</div>
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="hobby-sports-checkbox" value="Sports" checked disabled>
+                <label class="form-check-label" for="hobby-sports-checkbox">
+                  <i class="fa-solid fa-basketball" title="Sports"></i>&nbsp;Sports
+                </label>
+            </div>
 
-<div class="form-check form-check-inline">
-<input class="form-check-input" type="checkbox" id="hobby-photog-checkbox" value="Photography" checked disabled>
-    <label class="form-check-label" for="hobby-photog-checkbox">
-      <i class="fa-solid fa-camera" title="Photography"></i>&nbsp;Photography
-    </label>
-</div>
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="hobby-travel-checkbox" value="Travel" checked disabled>
+                <label class="form-check-label" for="hobby-travel-checkbox">
+                  <i class="fa-solid fa-plane" title="Travel"></i>&nbsp;Travel
+                </label>
+            </div>
 
-<div class="form-check form-check-inline">
-<input class="form-check-input" type="checkbox" id="hobby-reading-checkbox" value="Reading" checked disabled>
-    <label class="form-check-label" for="hobby-reading-checkbox">
-      <i class="fa-solid fa-book-open-reader" title="Reading"></i>&nbsp;Reading
-    </label>
-</div>
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="hobby-gaming-checkbox" value="Video Games / Gaming" checked disabled>
+                <label class="form-check-label" for="hobby-gaming-checkbox">
+                  <i class="fa-solid fa-gamepad" title="Video Games / Gaming"></i>&nbsp;Video Games / Gaming
+                </label>
+            </div>
 
-<div class="form-check form-check-inline">
-<input class="form-check-input" type="checkbox" id="hobby-running-checkbox" value="Running" checked disabled>
-    <label class="form-check-label" for="hobby-running-checkbox">
-      <i class="fa-solid fa-person-running" title="Running"></i>&nbsp;Running
-    </label>
-</div>
-
-<!-- <div class="form-check form-check-inline">
-<input class="form-check-input" type="checkbox" id="hobby-science-checkbox" value="Science" checked disabled>
-    <label class="form-check-label" for="hobby-science-checkbox">
-      <i class="fa-solid fa-flask-vial" title="Science"></i>&nbsp;Science
-    </label>
-</div> -->
-
-<div class="form-check form-check-inline">
-<input class="form-check-input" type="checkbox" id="hobby-sports-checkbox" value="Sports" checked disabled>
-    <label class="form-check-label" for="hobby-sports-checkbox">
-      <i class="fa-solid fa-basketball" title="Sports"></i>&nbsp;Sports
-    </label>
-</div>
-
-<div class="form-check form-check-inline">
-<input class="form-check-input" type="checkbox" id="hobby-travel-checkbox" value="Travel" checked disabled>
-    <label class="form-check-label" for="hobby-travel-checkbox">
-      <i class="fa-solid fa-plane" title="Travel"></i>&nbsp;Travel
-    </label>
-</div>
-
-<div class="form-check form-check-inline">
-<input class="form-check-input" type="checkbox" id="hobby-gaming-checkbox" value="Video Games / Gaming" checked disabled>
-    <label class="form-check-label" for="hobby-gaming-checkbox">
-      <i class="fa-solid fa-gamepad" title="Video Games / Gaming"></i>&nbsp;Video Games / Gaming
-    </label>
-</div>
-
-<!-- <div class="form-check form-check-inline">
-<input class="form-check-input" type="checkbox" id="hobby-volunteer-checkbox" value="Volunteering" checked disabled>
-    <label class="form-check-label" for="hobby-volunteer-checkbox">
-      <i class="fa-solid fa-handshake-angle" title="Volunteering"></i>&nbsp;Volunteering
-    </label>
-</div> -->
-
-<div class="form-check form-check-inline">
-<input class="form-check-input" type="checkbox" id="hobby-writing-checkbox" value="Writing" checked disabled>
-    <label class="form-check-label" for="hobby-writing-checkbox">
-      <i class="fa-solid fa-pen-to-square" title="Writing"></i>&nbsp;Writing
-    </label>
-</div>
-
-<!-- <div class="form-check form-check-inline">
-<input class="form-check-input" type="checkbox" id="hobby-yoga-checkbox" value="Yoga" checked disabled>
-    <label class="form-check-label" for="hobby-yoga-checkbox">
-      <i class="fa-solid fa-person-falling" title="Yoga"></i>&nbsp;Yoga
-    </label>
-</div> -->
-
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="hobby-writing-checkbox" value="Writing" checked disabled>
+                <label class="form-check-label" for="hobby-writing-checkbox">
+                  <i class="fa-solid fa-pen-to-square" title="Writing"></i>&nbsp;Writing
+                </label>
+            </div>
           </form>
-        </div><!-- end accordion-body -->
-      </div><!-- end accorion-collapse -->
+        </div><!-- end .accordion-body -->
+      </div><!-- end #strengthsCollapse -->
     </div><!-- end accordion-item -->
-  </div><!-- end accordion -->
+  </div><!-- end #accordionFilters -->
 </div> <!-- end column-margin -->
 <script>
-function detailFormatter(index, row) {
-    var excludeFields = ['timetamp', 'mentor_id', 'status', 'major', 'internship_experience', 'internship_details', 'selected'];
-    var html = [];
-    $.each(row, function (key, value) {
-        // Exclude fields already in the main view
-        // console.log("Parsing key: " + key);
-        var inExclude = excludeFields.includes(key);
-        var hasValue = (value != ""); // && (typeof value !== 'undefined');
-        var keyMap = {
-          'description': "Bio:",
-          'why': "What are your goals as a mentor?",
-          'strengths': "What are your strengths as a mentor?",
-          'hobbies': "What are some of your hobbies?",
-          'internship': "Do you have prior internship/work experience?",
-          'internship_details': "Prior internship details:",
-          'anything_else': "Anything else you would like your mentees to know?"
+$.get("data/2025_mentors_anonymized.csv", function(data){
+  Papa.parse(data, {
+    header: true,
+    complete: function(results) {
+      console.log("Parsing complete:", results);
+      const tooltipSettings = {
+        container:'body',
+        trigger: 'hover',
+        placement:'bottom'
+      };
+      $('#mentor-table').bootstrapTable({
+        data: results.data,
+        onPostBody: function() {
+          // $('[data-toggle="tooltip"]').tooltip({container: 'body',trigger:'hover',placement:'bottom'});
+          $('#mentor-table').bootstrapTable('expandAllRows');
+          // And check the selected IDs
+          const curSelected = store.get('selected');
+          curSelected.map(function(selectedId) {
+            console.log(`Checking selectedId ${selectedId} in table`);
+            const rowNum = parseInt(selectedId) - 1;
+            $('#mentor-table').bootstrapTable('check', rowNum);
+          });
         }
-        if (!inExclude && hasValue) {
-          // Construct the string
-          var keyStr = keyMap[key];
-          var keyValStr = `<p><b>${keyStr}</b> ${value}</p>`;
-          html.push(keyValStr);
-        }
-    });
-    return html.join('');
-}
-</script>
-
-<script>
-// Table event handlers
-function updateSidebar() {
-  let selections = store.get('selected');
-  $('#selected-ids').text(selections.toString());
-}
-$('#mentor-table').on('check.bs.table', function (e, r, elt) {
-  console.log("check");
-  // console.log(r);
-  const checkedId = r.mentor_id;
-  // console.log(checkedId);
-  // console.log(elt);
-  let selected = store.get('selected');
-  console.log(selected);
-  console.log(selected.includes(checkedId));
-  if (!selected.includes(checkedId)) {
-    selected.push(checkedId);
-    selected.sort();
-    // Convert to string
-    store.set('selected', selected);
-  }
-  // Add 'selected' class to next detailView
-  // console.log(elt);
-  // let nextElt = elt[0].parentElement.parentElement.parentElement.nextElementSibling;
-  // if (nextElt.classList.contains("detail-view")) {
-  //   nextElt.classList.add("selected");
-  // }
-  // And update the sidebar
-  updateSidebar();
-});
-$('#mentor-table').on('uncheck.bs.table', function (e, r, elt) {
-  console.log("uncheck");
-  // console.log(r);
-  const uncheckedId = r.mentor_id;
-  // console.log(checkedId);
-  // console.log(elt);
-  let selected = store.get('selected');
-  console.log(selected);
-  console.log(selected.includes(uncheckedId));
-  if (selected.includes(uncheckedId)) {
-    selected = selected.filter(item => item !== uncheckedId);
-    selected.sort();
-    // Convert to string
-    store.set('selected', selected);
-  }
-  // Remove 'selected' class to next detailView
-  // let nextElt = elt[0].parentElement.parentElement.parentElement.nextSibling;
-  // if (nextElt.classList.contains("detail-view")) {
-  //   nextElt.classList.remove("selected");
-  // }
-  // And update the sidebar
-  updateSidebar();
-});
-var $table = $('#mentor-table');
-function updateTable() {
-  $table.bootstrapTable('filterBy', {
-    Strengths: selectedStrengths,
-    Hobbies: selectedHobbies
-  }, {
-    'filterAlgorithm': (row, filters) => {
-      console.log("starting filter");
-      // Check if any of the row's strengths are checked. If not, remove
-      var rowStrengthStr = row.strengths;
-      var rowStrengths = rowStrengthStr.split(', ');
-      var rowContainsSomeStrengths = rowStrengths.some(strengthCheck);
-      console.log("rowContainsSomeStrengths = " + rowContainsSomeStrengths);
-      var rowHobbyStr = row.hobbies;
-      var rowHobbies = rowHobbyStr.split(', ');
-      var rowContainsSomeHobbies = rowHobbies.some(hobbyCheck);
-      console.log("rowContainsSomeHobbies = " + rowContainsSomeHobbies);
-      return rowContainsSomeStrengths || rowContainsSomeHobbies;
+      });
     }
   });
-  $table.bootstrapTable('expandAllRows');
-  console.log("updateTable complete.")
-  console.log("selectedStrengths = " + selectedStrengths.join(","));
-  console.log("selectedHobbies = " + selectedHobbies.join(","));
-}
-function strengthCheck(element, index, array) {
-  return selectedStrengths.includes(element);
-}
-function hobbyCheck(element, index, array) {
-  return selectedHobbies.includes(element);
-}
-var filterState = "all";
-$('#all-props').on('click', function(event) {
-  //event.preventDefault();
-  console.log("all-props clicked");
-  selectedStrengths = allStrengths.slice();
-  selectedHobbies = allHobbies.slice();
-  updateTable();
-  $("[id^=strength-]").prop("checked", true).prop("disabled", true);
-  $("[id^=hobby-]").prop("checked", true).prop("disabled", true);
-  $("#all-props").prop("checked", true);
-  $("#filter-props").prop("checked", false);
-  filterState = "all";
-  return true;
 });
-$('#filter-props').on('click', function(event) {
-  //event.preventDefault();
-  console.log("filter-props clicked");
-  // If it was already checked, don't do anything
-  if (filterState == "filtered") {
-    console.log("already filtered, returning true");
-    return true;
-  }
-  // Do the clearing
-  selectedStrengths = [];
-  selectedHobbies = [];
-  // And update the table
-  updateTable();
-  $("[id^=strength-]").prop("checked", false).prop("disabled", false);
-  $("[id^=hobby-]").prop("checked", false).prop("disabled", false);
-  $("#all-props").prop("checked", false);
-  $("#filter-props").prop("checked", true);
-  filterState = "filtered";
-  return true;
-});
-// And for individual checks
-$("[id^=strength-]").click(function() {
-  console.log("strength clicked");
-  var invoker = $(this);
-  var isChecked = invoker.prop('checked');
-  var checkboxValue = invoker.attr('value');
-  // isChecked is *after* the click. So, update based on this value
-  if (isChecked) {
-    // They just included it
-    selectedStrengths.push(checkboxValue);
-  } else {
-    // Remove it
-    const strengthIndex = selectedStrengths.indexOf(checkboxValue);
-    if (strengthIndex > -1) {
-      selectedStrengths.splice(strengthIndex, 1);
-    } else {
-      console.log("Error: strength value '" + checkboxValue + "' not found");
-    }
-  }
-  updateTable();
-});
-$("[id^=hobby-]").click(function() {
-  var invoker = $(this);
-  console.log("hobby clicked");
-  console.log(invoker);
-  var isChecked = invoker.prop('checked');
-  var checkboxValue = invoker.attr('value');
-  console.log(invoker.attr('value'));
-  console.log(isChecked);
-  // isChecked is *after* the click. So, update based on this value
-  if (isChecked) {
-    // They just included it
-    selectedHobbies.push(checkboxValue);
-  } else {
-    // Remove it
-    const hobbyIndex = selectedHobbies.indexOf(checkboxValue);
-    if (hobbyIndex > -1) {
-      selectedHobbies.splice(hobbyIndex, 1);
-    } else {
-      console.log("Error: hobby value '" + checkboxValue + "' not found");
-    }
-  }
-  updateTable();
-});
-// Parse the .csv spreadsheet
-//"https://docs.google.com/spreadsheets/d/e/2PACX-1vQBF5uM7cMSFq_TkxVW0rxYZiU3vw16-IZBz1PfwMK1gDYUucXa2mtu7NEHivuUOn0yuUCELbcijlRR/pub?gid=0&single=true&output=csv"
-// "https://docs.google.com/spreadsheets/d/e/2PACX-1vRL9qJuSSOARoZuW9oljx9iS6DaCaJzDT5ZH7ktIWil0uz0AMh5SkzXzsIxpMf61DH3Ya17Nt8erWqN/pub?gid=721661001&single=true&output=csv"
-// "https://docs.google.com/spreadsheets/d/e/2PACX-1vRAJ5LNGz2etwolKHAfpTbNz2IB_CzaVj2kkate728uOuLyDxneNYE1n_9xjUmxmcPOY_py-CSX7hZX/pub?gid=1040254459&single=true&output=csv"
-$.get("data/2025_mentors_anonymized.csv", function (data) {
-  Papa.parse(data, {
-  // download: true,
-  header: true,
-  complete: function (results) {
-    console.log("Parsing complete:", results);
-    $table.bootstrapTable({
-      data: results.data,
-      onPostBody: function() {
-        $('[data-toggle="tooltip"]').tooltip({container:'body', trigger: 'hover', placement:"bottom"});
-      }
-    });
-    $table.bootstrapTable('expandAllRows');
-  }
-});
-});
-
-var strengthDict = {
+const strengthDict = {
   "I am familiar with life in DC": "fa-solid fa-champagne-glasses",
   "I am friendly and welcoming": "fa-solid fa-face-smile",
   "I am strong academically": "fa-solid fa-award",
@@ -494,11 +276,11 @@ var strengthDict = {
   "I have work and/or internship experience": "fa-solid fa-briefcase",
   "I used to be a mentor in my undergrad": "fa-solid fa-graduation-cap"
 };
-var allStrengths = Object.keys(strengthDict);
-console.log("allStrengths:");
-console.log(allStrengths);
-var selectedStrengths = allStrengths.slice();
-var hobbyDict = {
+let allStrengths = Object.keys(strengthDict);
+// console.log("allStrengths:");
+// console.log(allStrengths);
+let selectedStrengths = allStrengths.slice();
+const hobbyDict = {
   "Art / Art History": "fa-paintbrush",
   "Bars & Clubs": "fa-martini-glass",
   "Board / Card Games": "fa-game-board",
@@ -524,21 +306,49 @@ var hobbyDict = {
   "Writing": "fa-pen-to-square",
   "Yoga": "fa-person-falling"
 }
-var allHobbies = Object.keys(hobbyDict);
-console.log(allHobbies);
-var selectedHobbies = allHobbies.slice();
+let allHobbies = Object.keys(hobbyDict);
+// console.log(allHobbies);
+let selectedHobbies = allHobbies.slice();
 function strengthsFormatter(value, row) {
-  var strengthItems = value.split(', ');
-  var strengthIcons = strengthItems.map(item => '<i class="' + strengthDict[item] + '" data-bs-toggle="tooltip" data-bs-placement="bottom" title="' + item + '"></i>');
-  var strengthStr = strengthIcons.join('&nbsp;');
+  const strengthItems = value.split(', ');
+  const strengthIcons = strengthItems.map(item => '<i class="' + strengthDict[item] + '" data-bs-toggle="tooltip" data-bs-placement="bottom" title="' + item + '"></i>');
+  const strengthStr = strengthIcons.join('&nbsp;');
   return strengthStr;
 }
 function hobbiesFormatter(value, row) {
-  var hobbyItems = value.split(', ');
-  var hobbyIcons = hobbyItems.map(item => '<i class="fa-solid ' + hobbyDict[item] + '" data-bs-toggle="tooltip" data-bs-placement="bottom" title="' + item + '"></i>');
-  var hobbyStr = hobbyIcons.join('&nbsp;');
+  const hobbyItems = value.split(', ');
+  const hobbyIcons = hobbyItems.map(item => '<i class="fa-solid ' + hobbyDict[item] + '" data-bs-toggle="tooltip" data-bs-placement="bottom" title="' + item + '"></i>');
+  const hobbyStr = hobbyIcons.join('&nbsp;');
   return hobbyStr;
 }
+function removeItemClick(idNum) {
+  // This is separate function bc need to uncheck table programmatically
+  console.log(`removeItemClick(${idNum})`);
+  // Off-by-one errors.....
+  const rowNum = parseInt(idNum) - 1;
+  $('#mentor-table').bootstrapTable('uncheck', rowNum);
+  return false;
+}
+function removeListItem(idNum) {
+  $('#selected-ids').find(`[data-rowid='${idNum}']`).remove();
+  return false;
+}
+// function tableScrollTo(idNum) {
+//   console.log(`tableScrollTo(${idNum})`);
+//   const rowNum = parseInt(idNum) - 1;
+//   const rowData = {unit: 'rows', value: rowNum};
+//   $('#mentor-table').bootstrapTable('scrollTo', rowData);
+//   // $('#mentor-table').bootstrapTable('scrollTo', 'bottom');
+//   return false;
+// }
+function tableScrollTo(idNum) {
+  console.log(`tableScrollTo(${idNum})`);
+  // The - 50 is to account for sticky table header
+  $([document.documentElement, document.body]).animate({
+      scrollTop: $(`tr[data-uniqueid="${idNum}"]`).offset().top - 50
+  }, 100);
+}
+// Don't allow sidebar on mobile...
+$('.quarto-btn-toggle').remove();
 </script>
 ```
-
